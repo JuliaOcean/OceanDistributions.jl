@@ -1,6 +1,6 @@
-using OceanWaterMasses
+using OceanDistributions
 using Test
 
-@testset "OceanWaterMasses.jl" begin
+@testset "OceanDistributions.jl" begin
     # Write your own tests here.
 end

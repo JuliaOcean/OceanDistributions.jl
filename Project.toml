@@ -1,4 +1,4 @@
-name = "OceanWaterMasses"
+name = "OceanDistributions"
 uuid = "aa3b323a-0e68-4b14-b952-9911d94e084a"
 authors = ["gaelforget <gforget@mit.edu>"]
 version = "0.1.0"

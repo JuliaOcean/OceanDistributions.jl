@@ -1,4 +1,4 @@
-module OceanWaterMasses
+module OceanDistributions
 
 greet() = print("Hello World!")
 

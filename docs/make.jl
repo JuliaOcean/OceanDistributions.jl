@@ -1,17 +1,17 @@
-using Documenter, OceanWaterMasses
+using Documenter, OceanDistributions
 
 makedocs(;
-    modules=[OceanWaterMasses],
+    modules=[OceanDistributions],
     format=Documenter.HTML(),
     pages=[
         "Home" => "index.md",
     ],
-    repo="https://github.com/gaelforget/OceanWaterMasses.jl/blob/{commit}{path}#L{line}",
-    sitename="OceanWaterMasses.jl",
+    repo="https://github.com/gaelforget/OceanDistributions.jl/blob/{commit}{path}#L{line}",
+    sitename="OceanDistributions.jl",
     authors="gaelforget <gforget@mit.edu>",
     assets=String[],
 )
 
 deploydocs(;
-    repo="github.com/gaelforget/OceanWaterMasses.jl",
+    repo="github.com/gaelforget/OceanDistributions.jl",
 )
