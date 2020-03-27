@@ -13,7 +13,7 @@ Tcensus=readoceandistribution("examples/Tcensus.txt")
 ```
 """
 function readoceandistribution(file::String)
-    return CSV.File(file)
+    return CSV.read(file)
 end
 
 end # module
