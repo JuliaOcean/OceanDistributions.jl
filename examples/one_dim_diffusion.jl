@@ -52,60 +52,6 @@ Starting from a step-like distribution of two particle groups over the `z=(0,1)`
 _Credits: the presented model is a simplified version of the `aquacosm` model from Paparella & Vichi M (2020) Stirring, Mixing, Growing: Microscale Processes Change Larger Scale Phytoplankton Dynamics. doi: 10.3389/fmars.2020.00654_
 """
 
-# ╔═╡ c86cf1e9-d0b6-48e8-8a01-0dcc591afc85
-begin
-	## Plotting
-	
-	function plot_paths(z)
-		np=size(z,1)
-		plt=lineplot(z[1,:],ylim=(-0.1,1.1))
-		np>1 ? lineplot!(plt,z[2,:]) : nothing
-		plt
-	end
-
-	function plot_paths(sol::RODESolution)
-		np=size(sol,1)
-		plt=lineplot(sol(0:0.01:1)[1,:],ylim=(-0.1,1.1))
-		np>1 ? lineplot!(plt,sol(0:0.01:1)[2,:]) : nothing
-		plt
-	end
-
-	function gridded_stats(za,ca,zb,cb)
-		out=zeros(10,2)
-		dz=0.1
-		t=size(za,2)
-		for i0=1:10
-			z0=0+dz*(i0-1)
-			ia=findall( (za[:,t].>z0).*(za[:,t].<=z0+dz) );
-			ib=findall( (zb[:,t].>z0).*(zb[:,t].<=z0+dz) );
-			tmp=[ca[ia,t];cb[ib,t]]
-			out[i0,1]=mean(tmp)
-			out[i0,2]=std(tmp)
-		end
-		out
-	end
-
-	function plot_stats(st)
-		plt=lineplot(st[:,1],ylim=(-0.1,1.1))
-		lineplot!(plt,st[:,1].+st[:,2])
-		lineplot!(plt,st[:,1].-st[:,2])
-		plt
-	end	
-	
-	"Plotting functions"
-end
-
-# ╔═╡ 2195a7a4-30d6-47fe-92db-d7ebef67ef03
-begin
-	# initial conditions
-	np=10000
-	u₀a=0.5*rand(np)
-	ca=zeros(np)
-	u₀b=0.5 .+ 0.5*rand(np)
-	cb=ones(np)
-	"done with initialization"
-end
-
 # ╔═╡ 32a692ab-4835-4943-8b46-8345ce881eb5
 begin
 	## Lagrangian
@@ -168,6 +114,60 @@ begin
 	end
 
 	"Lagrangian model formulated"
+end
+
+# ╔═╡ c86cf1e9-d0b6-48e8-8a01-0dcc591afc85
+begin
+	## Plotting
+	
+	function plot_paths(z)
+		np=size(z,1)
+		plt=lineplot(z[1,:],ylim=(-0.1,1.1))
+		np>1 ? lineplot!(plt,z[2,:]) : nothing
+		plt
+	end
+
+	function plot_paths(sol::RODESolution)
+		np=size(sol,1)
+		plt=lineplot(sol(0:0.01:1)[1,:],ylim=(-0.1,1.1))
+		np>1 ? lineplot!(plt,sol(0:0.01:1)[2,:]) : nothing
+		plt
+	end
+
+	function gridded_stats(za,ca,zb,cb)
+		out=zeros(10,2)
+		dz=0.1
+		t=size(za,2)
+		for i0=1:10
+			z0=0+dz*(i0-1)
+			ia=findall( (za[:,t].>z0).*(za[:,t].<=z0+dz) );
+			ib=findall( (zb[:,t].>z0).*(zb[:,t].<=z0+dz) );
+			tmp=[ca[ia,t];cb[ib,t]]
+			out[i0,1]=mean(tmp)
+			out[i0,2]=std(tmp)
+		end
+		out
+	end
+
+	function plot_stats(st)
+		plt=lineplot(st[:,1],ylim=(-0.1,1.1))
+		lineplot!(plt,st[:,1].+st[:,2])
+		lineplot!(plt,st[:,1].-st[:,2])
+		plt
+	end	
+	
+	"Plotting functions"
+end
+
+# ╔═╡ 2195a7a4-30d6-47fe-92db-d7ebef67ef03
+begin
+	# initial conditions
+	np=10000
+	u₀a=0.5*rand(np)
+	ca=zeros(np)
+	u₀b=0.5 .+ 0.5*rand(np)
+	cb=ones(np)
+	"done with initialization"
 end
 
 # ╔═╡ fd2db517-2282-43da-a543-a1ef59a439c2
