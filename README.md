@@ -4,7 +4,6 @@
 [![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://gaelforget.github.io/OceanDistributions.jl/dev)
 [![Build Status](https://travis-ci.org/gaelforget/OceanDistributions.jl.svg?branch=master)](https://travis-ci.org/gaelforget/OceanDistributions.jl)
 [![Codecov](https://codecov.io/gh/gaelforget/OceanDistributions.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/gaelforget/OceanDistributions.jl)
-[![Coveralls](https://coveralls.io/repos/github/gaelforget/OceanDistributions.jl/badge.svg?branch=master)](https://coveralls.io/github/gaelforget/OceanDistributions.jl?branch=master)
 
 [![DOI](https://zenodo.org/badge/240949850.svg)](https://zenodo.org/badge/latestdoi/240949850)
 
