@@ -7,5 +7,5 @@ version = "0.1.2"
 CSV = "336ed68f-0bac-5ca0-87d4-7b16caf5d00b"
 
 [compat]
-CSV = "0.5, 0.6, 0.7, 0.8"
+CSV = "0.5, 0.6, 0.7, 0.8, 0.9"
 julia = "1"
