@@ -1,6 +1,6 @@
 module OceanDistributions
 
-using CSV
+using CSV, DataFrames
 export readoceandistribution
 
 """
@@ -13,7 +13,7 @@ Tcensus=readoceandistribution("examples/Tcensus.txt")
 ```
 """
 function readoceandistribution(file::String)
-    return CSV.read(file)
+    return CSV.read(file,DataFrame)
 end
 
 end # module
