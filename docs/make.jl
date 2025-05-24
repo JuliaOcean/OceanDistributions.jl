@@ -7,10 +7,10 @@ makedocs(;
     pages=[
         "Home" => "index.md",
     ],
-    repo="https://github.com/gaelforget/OceanDistributions.jl/blob/{commit}{path}#L{line}",
+    repo="https://github.com/JuliaOcean/OceanDistributions.jl/blob/{commit}{path}#L{line}",
     sitename="OceanDistributions.jl",
     authors="gaelforget <gforget@mit.edu>",
-    assets=String[],
+    warnonly = [:cross_references,:missing_docs],
 )
 
 lst=("one_dim_diffusion.jl",)
