@@ -13,7 +13,7 @@ makedocs(;
     warnonly = [:cross_references,:missing_docs],
 )
 
-lst=("one_dim_diffusion.jl",)
+lst=("one_dim_diffusion.jl","OptimalTransport_demo.jl")
 for i in lst
     fil_in=joinpath(@__DIR__,"..", "examples",i)
     fil_out=joinpath(@__DIR__,"build", i[1:end-2]*"html")
