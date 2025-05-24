@@ -9,7 +9,8 @@ _This package is at a very early stage of development._
 ```@index
 ```
 
-- [diffusion example](one_dim_diffusion.html) ➭ [download / url](one_dim_diffusion.jl)
+- [diffusion using StochasticDiffEq.jl](one_dim_diffusion.html) ➭ [download ](one_dim_diffusion.jl)
+- [optimal transport example](OptimalTransport_demo.html) ➭ [download ](OptimalTransport_demo.jl)
 
 ```@autodocs
 Modules = [OceanDistributions]

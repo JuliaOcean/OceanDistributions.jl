@@ -7,13 +7,13 @@ makedocs(;
     pages=[
         "Home" => "index.md",
     ],
-    repo="https://github.com/gaelforget/OceanDistributions.jl/blob/{commit}{path}#L{line}",
+    repo="https://github.com/JuliaOcean/OceanDistributions.jl/blob/{commit}{path}#L{line}",
     sitename="OceanDistributions.jl",
     authors="gaelforget <gforget@mit.edu>",
-    assets=String[],
+    warnonly = [:cross_references,:missing_docs],
 )
 
-lst=("one_dim_diffusion.jl",)
+lst=("one_dim_diffusion.jl","OptimalTransport_demo.jl")
 for i in lst
     fil_in=joinpath(@__DIR__,"..", "examples",i)
     fil_out=joinpath(@__DIR__,"build", i[1:end-2]*"html")
